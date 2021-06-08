@@ -18,7 +18,8 @@ Do the following:
    HINT: no function required
 */
 
-
+let votingAge = 20;
+console.log( votingAge > 18 ? true : false);
 
 /*
 Task 1b - Values
@@ -31,7 +32,9 @@ Do the following:
    HINT: no function required
 */
 
-
+let a = 2;
+let b = 3;
+console.log(a != b ? a = b : a = a);
 
 
 
@@ -46,7 +49,8 @@ Do the following:
    HINT: look up the Number method
 */
 
-
+let value = "1999";
+console.log(Number(value));
 
 
 /*
@@ -58,8 +62,8 @@ Do the following:
    3. Multiply a and b and return the answer
 */
 
-function multiply(/*add your code here*/){
-    /*add your code here*/
+function multiply(a,b){
+    return a * b
   }
 
 
@@ -74,8 +78,8 @@ Do the following:
    3. Return the newly calculated age
 */
 
-function dogYears(/*add your code here*/){
-    /*add your code here*/
+function dogYears(age){
+  return age * 7
 }
 
 
@@ -107,9 +111,36 @@ Use the hungryDog function and feeding requirements below to do the following:
   NOTE: If done correctly, a weight of 15 lbs and age of 1 year would return 0.44999999999999996
 */  
 
-function hungryDog(/*add your code here*/){
-    /*add your code here*/
+function hungryDog(weight, age) {
+
+  if (age >= 1) {
+      if (weight > 15) {
+          return weight * (2 / 100)
+      } else if (weight <= 15) {
+          return weight * (3 / 100)
+      } else if (weight <= 10) {
+          return weight * (4 / 100)
+      } else if (weight <= 5) {
+          return weight * (5 / 100)
+      } else {
+          return null
+      }
+  } else if (age < 1) {
+      if (age <= 1) {
+          return weight * (4 / 100)
+      } else if (age <= Math.round(7 / 12)) {
+          return weight * (5 / 100)
+      } else if (age <= Math.round(4 / 12)) {
+          return weight * (10 / 100)
+      }
+    else{
+      return null
+    }
   }
+
+}
+
+console.log(hungryDog(15, 1));
 
 
 
@@ -134,9 +165,47 @@ Use the game function below to do the following:
   HINT: Remember that the order in which we pass in our arguments matters when it comes to parameters
 */
 
-function game(user, computer){
-    /*add your code here*/
+let global = Math.floor(Math.random() * (2 - 1 + 1) + 1);
+
+function computerChoice(computer) {
+  switch(computer){
+    case 1:
+      return 'rock'
+    case 2:
+      return 'scissors'
+    default:
+     return 'paper'
+  }
 }
+
+function game(user, computer){
+
+  
+  if( user == "rock" && computer == "paper"){
+    return "you lose!"
+  }
+  else if ( user == "paper" && computer == "rock"){
+    return "you win!"
+  }
+   else if ( user == "paper" && computer == "scissors"){
+    return "you lose!"
+  }
+   else if ( user == "scissors" && computer == "paper"){
+    return "you win!"
+  }
+  else if ( user === "scissors" && computer == "rock"){
+    return "you lose!"
+  }
+  else if ( user == "rock" && computer == "scissors"){
+    return "you win!"
+  }
+  else{
+    return "it's a tie"
+  }
+
+}
+  
+console.log(game(1,computerChoice(global)))
   
   
 
