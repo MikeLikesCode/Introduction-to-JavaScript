@@ -251,7 +251,7 @@ Using the annoyingSong function below do the following:
 */
 
 function annoyingSong(number){
-  for(var i = 0; i < number; i++) {
+  for(let i = 0; i < number; i++) {
      return `${number} bottles of soda on the wall, ${number} bottles of soda, take one down pass it around ${number - 1} bottles of soda on the wall`
     } 
   }
